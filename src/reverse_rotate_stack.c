@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:13:38 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/24 19:17:51 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:28:29 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	reverse_rotate_stack(t_stack *stack)
 		return ;
 	new_last = stack->front;
 	tmp = stack->rear;
-	while (new_last -> next ->next != NULL)
+	while (new_last->next->next != NULL)
 		new_last = new_last->next;
-	new_last->next = NULL;
+	stack->rear = new_last;
 	tmp->next = stack->front;
 	stack->front = tmp;
-	stack->rear = new_last;
+	stack->rear->next = NULL;
 }
 
 void	rra(t_data *data)

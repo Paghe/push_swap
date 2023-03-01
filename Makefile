@@ -1,4 +1,4 @@
-FLAGS = -g #-Wall -Wextra -Werror
+FLAGS = -fsanitize=address -g -Wall -Wextra -Werror
 
 NAME = push_swap
 
@@ -13,7 +13,9 @@ SRC = src/main.c \
 		src/parse.c	\
 		src/utils_parser.c	\
 		src/utils_stack.c \
-		src/utils_two.c
+		src/utils_two.c	\
+		sorting/sort_three.c \
+		sorting/utils_sort.c \
 
 OBJ = $(SRC:.c=.o)
 

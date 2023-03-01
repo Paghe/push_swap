@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:20:01 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/27 14:26:14 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:32:21 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,9 @@ int			check_double_numbers(t_stack *stack);
 void		check_stack_limits(char *str);
 long long	ft_push_atoi(const char *str);
 void		message_error(void);
+void		sort_three_numb(t_data *data);
+void		check_sort(t_data *data);
+void		mid_is_smaller(t_data *data);
+void		mid_is_bigger(t_data *data);
+void		sorting(t_data *data);
 #endif

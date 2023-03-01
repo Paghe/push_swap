@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:19:52 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/27 13:29:17 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:56:18 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	parsing(t_data data)
 	char	**split;
 	char	*regroup;
 
+	split = NULL;
 	if (data.argc < 2)
 		return ;
 	if (data.argc > 1)

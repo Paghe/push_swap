@@ -1,45 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_stack.c                                       :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 22:01:27 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/28 20:17:24 by apaghera         ###   ########.fr       */
+/*   Created: 2023/02/28 13:39:49 by apaghera          #+#    #+#             */
+/*   Updated: 2023/03/01 20:33:05 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-static void	swap_first_two(t_stack *stack)
+void	sort_three_numb(t_data *data)
 {
-	t_node	*tmp;
-	t_node	*tmp2;
+	t_stack	*stack;
 
-	if (stack->size < 2)
-		return ;
-	tmp2 = stack->front;
-	tmp = stack->front->next;
-	stack->front = stack->front->next->next;
-	tmp->next = tmp2;
-	tmp2->next = stack->front;
-	stack->front = tmp;
-}
-
-void	sa(t_data *data)
-{
-	swap_first_two(data->a);
-}
-
-void	sb(t_data *data)
-{
-	swap_first_two(data->b);
-}
-
-void	ss(t_data *data)
-{
-	sa(data);
-	sb(data);
+	stack = data->a;
+	check_sort(data);
+	sorting(data);
+	printf("------------------------------\n");
+	print_stack(data->a);
 }
