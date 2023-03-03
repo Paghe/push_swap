@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:17:46 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 17:20:36 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:54:25 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,57 @@
 }
  */
 
+void	sorting_using_pb(t_data *data)
+{
+	if (data->a->front->index == 0)
+		pb(data);
+	if (data->a->front->next->next->index == 0)
+	{
+		ra(data);
+		ra(data);
+		pb(data);
+	}
+	if (data->a->front->next->next->next->index == 0)
+	{
+		rra(data);
+		rra(data);
+		pb(data);
+	}
+	if (data->a->front->next->index == 0)
+	{
+		ra(data);
+		pb(data);
+	}
+	if (live_index(data, data->a->front) == 0)
+	{
+		pb(data);
+		sort_three_numb(data);
+		pa(data);
+		pa(data);
+	}
+	if (live_index(data, data->a->rear) == 0)
+	{
+		rra(data);
+		pb(data);
+		sort_three_numb(data);
+		pa(data);
+		pa(data);
+	}
+	if (live_index(data, data->a->front->next) == 0)
+	{
+		ra(data);
+		pb(data);
+		sort_three_numb(data);
+		pa(data);
+		pa(data);
+	}
+	if (live_index(data, data->a->front->next->next) == 0)
+	{
+		rra(data);
+		rra(data);
+		pb(data);
+		sort_three_numb(data);
+		pa(data);
+		pa(data);
+	}
+}

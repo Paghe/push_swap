@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:45:36 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/24 19:16:30 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:24:40 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	rotate_stack(t_stack *stack)
 	stack->front = stack->front->next;
 	stack->rear->next = tmp;
 	stack->rear = stack->rear->next;
+	stack->rear->next = NULL;
 }
 
 void	ra(t_data *data)

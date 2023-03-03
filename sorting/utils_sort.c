@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:39:35 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 13:21:41 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:52:31 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	check_sort(t_data *data)
 
 	count = 1;
 	node = data->a->front;
-
 	while (node && node->next)
 	{
 		if (node->number < node->next->number)
@@ -63,7 +62,6 @@ void	front_rear_sort(t_data *data)
 
 void	sorting(t_data *data)
 {
-	check_sort(data);
 	mid_is_smaller(data);
 	mid_is_bigger(data);
 	front_rear_sort(data);

@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 20:08:29 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/24 19:18:08 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:37:46 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	push_to_from(t_stack *to, t_stack *from)
 	from->front = from->front->next;
 	tmp->next = to->front;
 	to->front = tmp;
+	to->size++;
+	from->size--;
 }
 
 void	pa(t_data *data)
