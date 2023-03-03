@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:58:34 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/25 16:06:47 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 14:02:10 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*new_node(int number)
 	if (!node)
 		return (NULL);
 	node->number = number;
+	node->index = 0;
 	node->next = NULL;
 	return (node);
 }

@@ -6,12 +6,11 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:49:45 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/27 14:27:25 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 12:09:12 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 int	check_double_numbers(t_stack *stack)
 {
@@ -25,9 +24,7 @@ int	check_double_numbers(t_stack *stack)
 		while (node)
 		{
 			if (check->number == node->number)
-			{
 				return (1);
-			}
 			node = node->next;
 		}	
 		check = check->next;

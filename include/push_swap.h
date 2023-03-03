@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:20:01 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/01 20:32:21 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:05:20 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_node	t_node;
 typedef struct s_node
 {
 	int					number;
+	int					index;
 	t_node				*next;
 }	t_node;
 
@@ -76,4 +77,8 @@ void		check_sort(t_data *data);
 void		mid_is_smaller(t_data *data);
 void		mid_is_bigger(t_data *data);
 void		sorting(t_data *data);
+void		sort_five_num(t_data *data);
+void		find_lowest_num(t_data *data);
+void		index_stack(t_data *data);
+int			live_index(t_data *data, t_node *current);
 #endif

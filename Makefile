@@ -16,6 +16,8 @@ SRC = src/main.c \
 		src/utils_two.c	\
 		sorting/sort_three.c \
 		sorting/utils_sort.c \
+		sorting/sort_five.c \
+		sorting/utils_five.c \
 
 OBJ = $(SRC:.c=.o)
 

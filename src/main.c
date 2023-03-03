@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:19:17 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/01 20:52:45 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:20:26 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(int argc, char **argv)
 	add_node(data.a, 2);
 	add_node(data.a, 3);
 	add_node(data.b, 4); */
-	sort_three_numb(&data);
 	destroy_stack(data.a);
 	destroy_stack(data.b);
 /* 	system("leaks push_swap"); */

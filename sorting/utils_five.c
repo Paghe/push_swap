@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   utils_five.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 13:39:49 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/02 16:16:13 by apaghera         ###   ########.fr       */
+/*   Created: 2023/03/02 16:17:46 by apaghera          #+#    #+#             */
+/*   Updated: 2023/03/03 17:20:36 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	sort_three_numb(t_data *data)
+/* void	find_lowest_num(t_data *data)
 {
-	t_stack	*stack;
+	t_node	*check;
+	t_node	*node;
+	t_node	*tmp;
 
-	stack = data->a;
-	check_sort(data);
-	sorting(data);
-	printf("------------------------------\n");
-	print_stack(data->a);
+	check = data->a->front;
+	tmp = check;
+	while (check)
+	{
+		node = check->next;
+		while (node)
+		{
+			if (tmp->number > node->number)
+				tmp = node;
+			node = node->next;
+		}
+		check = check->next;
+	}
+	printf("%i\n", tmp->number);
 }
+ */
+
