@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:58:34 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 18:16:15 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:20:48 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*new_node(int number)
 		return (NULL);
 	node->number = number;
 	node->index = 0;
+	node->position = 0;
 	node->next = NULL;
 	return (node);
 }
@@ -66,7 +67,7 @@ void	print_stack(t_stack *stack)
 	node = stack->front;
 	while (node)
 	{
-		printf("stack A: %i\n", node->number);
+		printf("stack: %i\n", node->number);
 		node = node->next;
 	}
 }

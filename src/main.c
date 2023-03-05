@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:19:17 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 18:27:47 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/05 19:21:56 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	main(int argc, char **argv)
 	data.a = create_stack();
 	data.b = create_stack();
 	parsing(data);
-	sort_five_num(&data);
+/* 	sort_five_num(&data); */
+	test(&data);
 	/* add_node(data.a, 1);
 	add_node(data.a, 2);
 	add_node(data.a, 3);

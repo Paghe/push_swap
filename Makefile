@@ -18,6 +18,7 @@ SRC = src/main.c \
 		sorting/utils_sort.c \
 		sorting/sort_five.c \
 		sorting/utils_five.c \
+		sorting/sort.c	\
 
 OBJ = $(SRC:.c=.o)
 
@@ -26,11 +27,11 @@ LIBFT = ./libft/libft.a
 all: $(NAME)
 
 %.o: %.c
-	cc $(FLAGS) -c $^ -o $@
+	gcc $(FLAGS) -c $^ -o $@
 
 $(NAME): $(OBJ) include/push_swap.h
 	make -C libft
-	cc $(LINKFLAGS) $(OBJ) $(LIBFT) $(FLAGS) -o $(NAME)
+	gcc $(LINKFLAGS) $(OBJ) $(LIBFT) $(FLAGS) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

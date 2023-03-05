@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:19:52 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 19:53:29 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:16:24 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	parsing(t_data data)
 	convert_in_numbers(data, split);
 	check_sort(&data);
 	index_stack(&data);
-	print_stack(data.a);
+	/* print_stack(data.a); */
 	if (data.argc > 1)
 		free_str_parse(regroup, split);
 }

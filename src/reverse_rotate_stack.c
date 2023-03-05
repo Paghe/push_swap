@@ -6,11 +6,12 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:13:38 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/01 17:28:29 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:17:31 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <stdio.h>
 
 static void	reverse_rotate_stack(t_stack *stack)
 {
@@ -32,11 +33,13 @@ static void	reverse_rotate_stack(t_stack *stack)
 void	rra(t_data *data)
 {
 	reverse_rotate_stack(data->a);
+	printf("rra\n");
 }
 
 void	rrb(t_data *data)
 {
 	reverse_rotate_stack(data->b);
+	printf("rrb\n");
 }
 
 void	rrr(t_data *data)
