@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 16:25:24 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/05 20:01:03 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:46:34 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,114 @@ t_node	*find_zero_idx(t_data *data)
 	t_node				*tmp;
 	int					position;
 
+	if (data->a->size == 0)
+	{
+		return (NULL);
+	}	
 	tmp = data->a->front;
 	position = 1;
-	while (tmp && tmp->next)
+	while (tmp)
 	{
-		tmp = tmp->next;
-		position++;
-		if (tmp->index == 0)
+		if (live_index(data, tmp) == 0)
 		{
 			tmp->position = position;
 			return (tmp);
 		}	
+		tmp = tmp->next;
+		position++;
 	}
-	tmp->position = -1;
 	return (NULL);
 }
 
-void	test(t_data *data)
+t_node	*find_second_idx(t_data *data)
+{
+	t_node				*tmp;
+	int					position;
+
+	if (data->a->size == 0)
+		return (NULL);
+	tmp = data->a->front;
+	position = 1;
+	while (tmp)
+	{
+		if (live_index(data, tmp) == 1)
+		{
+			tmp->position_two = position;
+			return (tmp);
+		}	
+		tmp = tmp->next;
+		position++;
+	}
+	return (NULL);
+}
+
+void	sorting_all(t_data *data)
 {
 	t_node	*tmp;
-	int		count;
+	t_node	*tmp2;
+	int		near_end;
 
 	tmp = find_zero_idx(data);
-	count = tmp->position;
-	if (tmp->position > (int)data->a->size / 2)
+	tmp2 = find_second_idx(data);
+	data->chunk = 0;
+	while (data->a->size != 0)
 	{
-		while (count != (data->a->rear->index))
+		if (data->chunk == 19)
 		{
-			rra(data);
-			count++;
-		}	
+			printf("CHUNKS: %i\n", data->chunk);
+			if (live_index(data, data->b->front) == 19)
+			{
+				data->chunk = 0;
+			}
+			if (live_index(data, data->b->front) != 19)
+			{
+				if (data->a->front->number > data->b->front->number)
+				{
+					while (live_index(data, data->b->front) != 0)
+						rb(data);
+					if (live_index(data, data->b->front) == 0)
+						pb(data);
+					data->chunk = 0;
+				}
+			}
+		}
+		if (data->a->size != 1)
+			near_end = (int)data->a->size - tmp2->position_two;
+		if (near_end > tmp->position && data->a->size > 1)
+		{
+			sort_zero_idx(data);
+			data->chunk++;
+			tmp2 = find_second_idx(data);
+		}
+		else
+		{
+			if (data->a->size != 1)
+			{
+				while (tmp2->position_two != (int)data->a->size + 1)
+				{
+					rra(data);
+					tmp2->position_two++;
+				}
+				if (live_index(data, data->a->front) == 1)
+				{
+					pb(data);
+					data->chunk++;
+					tmp = find_zero_idx(data);
+					tmp2 = find_second_idx(data);
+					if (data->a->size > 1)
+						near_end = (int)data->a->size - tmp2->position_two;
+				}
+			}
+			if (data->a->size == 1)
+			{
+				pb(data);
+				data->chunk++;
+			}
+		}
 	}
-/* 	printf("Position: %i\n", tmp->position);
-	printf("Half size: %zu\n", data->a->size / 2); */
-	printf("Count: %i\n", count);
-	printf("Index: %i\n", data->a->rear->index);
-	print_stack(data->a);
+	while ((int)data->b->size != 0)
+	{
+		pa(data);
+	}	
+/* 	print_stack(data->a); */
 }

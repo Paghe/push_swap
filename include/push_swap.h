@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:20:01 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/05 18:18:33 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:38:08 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_node
 	int					number;
 	int					index;
 	int					position;
+	int					position_two;
 	t_node				*next;
 }	t_node;
 
@@ -41,6 +42,7 @@ typedef struct s_data
 	char				**argv;
 	t_stack				*a;
 	t_stack				*b;
+	int					chunk;
 }	t_data;
 
 t_data		init_data(int argc, char **argv);
@@ -84,5 +86,7 @@ void		index_stack(t_data *data);
 int			live_index(t_data *data, t_node *current);
 void		sorting_using_pb(t_data *data);
 t_node		*find_zero_idx(t_data *data);
-void		test(t_data *data);
+void		sorting_all(t_data *data);
+void		sort_zero_idx(t_data *data);
+t_node		*find_second_idx(t_data *data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:13:38 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/04 15:17:31 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:36:59 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	reverse_rotate_stack(t_stack *stack)
 void	rra(t_data *data)
 {
 	reverse_rotate_stack(data->a);
-	printf("rra\n");
+/* 	printf("rra\n"); */
 }
 
 void	rrb(t_data *data)
