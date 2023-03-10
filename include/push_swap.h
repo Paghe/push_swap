@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:20:01 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/09 19:38:08 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:14:06 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void		sorting(t_data *data);
 void		sort_five_num(t_data *data);
 void		find_lowest_num(t_data *data);
 void		index_stack(t_data *data);
-int			live_index(t_data *data, t_node *current);
+int			live_index(t_stack *stack, t_node *current);
 void		sorting_using_pb(t_data *data);
 t_node		*find_zero_idx(t_data *data);
 void		sorting_all(t_data *data);

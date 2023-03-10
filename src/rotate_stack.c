@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:45:36 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/09 18:37:07 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:32:17 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static void	rotate_stack(t_stack *stack)
 	t_node	*tmp;
 
 	if (stack->size < 2)
-	{
 		return ;
-	}
 	tmp = stack->front;
 	stack->front = stack->front->next;
 	stack->rear->next = tmp;
@@ -31,7 +29,7 @@ static void	rotate_stack(t_stack *stack)
 void	ra(t_data *data)
 {
 	rotate_stack(data->a);
-/* 	printf("ra\n"); */
+	printf("ra\n");
 }
 
 void	rb(t_data *data)

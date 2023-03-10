@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:17:46 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 19:54:25 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:16:31 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ void	sorting_using_pb(t_data *data)
 		ra(data);
 		pb(data);
 	}
-	if (live_index(data, data->a->front) == 0)
+	if (live_index(data->a, data->a->front) == 0)
 	{
 		pb(data);
 		sort_three_numb(data);
 		pa(data);
 		pa(data);
 	}
-	if (live_index(data, data->a->rear) == 0)
+	if (live_index(data->a, data->a->rear) == 0)
 	{
 		rra(data);
 		pb(data);
@@ -72,7 +72,7 @@ void	sorting_using_pb(t_data *data)
 		pa(data);
 		pa(data);
 	}
-	if (live_index(data, data->a->front->next) == 0)
+	if (live_index(data->a, data->a->front->next) == 0)
 	{
 		ra(data);
 		pb(data);
@@ -80,7 +80,7 @@ void	sorting_using_pb(t_data *data)
 		pa(data);
 		pa(data);
 	}
-	if (live_index(data, data->a->front->next->next) == 0)
+	if (live_index(data->a, data->a->front->next->next) == 0)
 	{
 		rra(data);
 		rra(data);

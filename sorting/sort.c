@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 16:25:24 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/09 19:46:34 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:01:45 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_node	*find_zero_idx(t_data *data)
 	position = 1;
 	while (tmp)
 	{
-		if (live_index(data, tmp) == 0)
+		if (live_index(data->a, tmp) == 0)
 		{
 			tmp->position = position;
 			return (tmp);
@@ -48,7 +48,7 @@ t_node	*find_second_idx(t_data *data)
 	position = 1;
 	while (tmp)
 	{
-		if (live_index(data, tmp) == 1)
+		if (live_index(data->a, tmp) == 1)
 		{
 			tmp->position_two = position;
 			return (tmp);
@@ -72,21 +72,34 @@ void	sorting_all(t_data *data)
 	{
 		if (data->chunk == 19)
 		{
-			printf("CHUNKS: %i\n", data->chunk);
-			if (live_index(data, data->b->front) == 19)
+			printf("Front Number: %i\n", data->b->front->number);
+			printf("Last Number B: %i\n", data->b->rear->number);
+			print_stack(data->b);
+			if (live_index(data->b, data->b->front) != 0)
 			{
-				data->chunk = 0;
+				while (live_index(data->b, data->b->front) != 0 && data->chunk != 0)
+				{
+					rb(data);
+					data->chunk--;
+				}	
 			}
-			if (live_index(data, data->b->front) != 19)
+			if (live_index(data->b, data->b->front) == 0)
 			{
 				if (data->a->front->number > data->b->front->number)
 				{
-					while (live_index(data, data->b->front) != 0)
+					pb(data);
+				}	
+				else
+				{
+					while (live_index(data->b, data->b->front) != 0)
+					{	
 						rb(data);
-					if (live_index(data, data->b->front) == 0)
-						pb(data);
-					data->chunk = 0;
+					}
 				}
+			}
+			while (live_index(data->b, data->b->front) != 19)
+			{
+				rb(data);
 			}
 		}
 		if (data->a->size != 1)
@@ -106,7 +119,7 @@ void	sorting_all(t_data *data)
 					rra(data);
 					tmp2->position_two++;
 				}
-				if (live_index(data, data->a->front) == 1)
+				if (live_index(data->a, tmp2) == 1)
 				{
 					pb(data);
 					data->chunk++;
@@ -123,6 +136,10 @@ void	sorting_all(t_data *data)
 			}
 		}
 	}
+/* 	while (live_index(data->b, data->b->front) != 99)
+	{
+		rb(data);
+	} */
 	while ((int)data->b->size != 0)
 	{
 		pa(data);

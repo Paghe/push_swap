@@ -1,4 +1,4 @@
-FLAGS = -fsanitize=address -g -Wall -Wextra -Werror
+FLAGS = -fsanitize=address -g #-Wall -Wextra -Werror
 
 NAME = push_swap
 

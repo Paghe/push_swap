@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:01:27 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/09 18:36:52 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:33:47 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ static void	swap_first_two(t_stack *stack)
 void	sa(t_data *data)
 {
 	swap_first_two(data->a);
-	/* printf("sa\n"); */
+	printf("sa\n");
 }
 
 void	sb(t_data *data)
 {
 	swap_first_two(data->b);
-	/* printf("sb\n"); */
+	printf("sb\n");
 }
 
 void	ss(t_data *data)

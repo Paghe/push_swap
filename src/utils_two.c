@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:13:20 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/03 17:04:42 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:15:41 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	index_stack(t_data *data)
 	}
 }
 
-int	live_index(t_data *data, t_node *current)
+int	live_index(t_stack *stack, t_node *current)
 {
 	t_node	*tmp;
 	int		index;
 
 	index = 0;
-	tmp = data->a->front;
+	tmp = stack->front;
 	while (tmp)
 	{
 		if (current->number > tmp->number)
