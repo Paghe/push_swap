@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:13:38 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/10 12:33:28 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:48:39 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	rrb(t_data *data)
 
 void	rrr(t_data *data)
 {
-	rra(data);
-	rrb(data);
+	reverse_rotate_stack(data->a);
+	reverse_rotate_stack(data->b);
+	printf("rrr\n");
 }

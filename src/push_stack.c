@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 20:08:29 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/10 15:24:03 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:10:54 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	push_to_from(t_stack *to, t_stack *from)
 	t_node	*tmp;
 
 	if (from->size == 0)
-	{
-		printf("WHAT YOU DOING\n");
 		return ;
-	}	
 	tmp = from->front;
 	from->front = from->front->next;
 	tmp->next = to->front;
@@ -30,7 +27,6 @@ void	push_to_from(t_stack *to, t_stack *from)
 	from->size--;
 	if (!to->rear)
 		to->rear = tmp;
-
 }
 
 void	pa(t_data *data)

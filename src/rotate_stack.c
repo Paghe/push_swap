@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:45:36 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/10 12:32:17 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:48:20 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	rb(t_data *data)
 
 void	rr(t_data *data)
 {
-	ra(data);
-	rb(data);
+	rotate_stack(data->a);
+	rotate_stack(data->b);
+	printf("rr\n");
 }

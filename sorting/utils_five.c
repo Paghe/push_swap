@@ -6,18 +6,19 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:17:46 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/10 16:16:31 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:33:16 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-/* void	find_lowest_num(t_data *data)
+int	find_lowest_num(t_data *data)
 {
 	t_node	*check;
 	t_node	*node;
 	t_node	*tmp;
+	int		min;
 
 	check = data->a->front;
 	tmp = check;
@@ -32,9 +33,9 @@
 		}
 		check = check->next;
 	}
-	printf("%i\n", tmp->number);
+	min = tmp->index;
+	return (min);
 }
- */
 
 void	sorting_using_pb(t_data *data)
 {
