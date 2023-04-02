@@ -6,14 +6,13 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:13:38 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/29 15:48:39 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:35:18 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
-static void	reverse_rotate_stack(t_stack *stack)
+void	reverse_rotate_stack(t_stack *stack)
 {
 	t_node	*tmp;
 	t_node	*new_last;
@@ -33,18 +32,18 @@ static void	reverse_rotate_stack(t_stack *stack)
 void	rra(t_data *data)
 {
 	reverse_rotate_stack(data->a);
-	printf("rra\n");
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_data *data)
 {
 	reverse_rotate_stack(data->b);
-	printf("rrb\n");
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_data *data)
 {
 	reverse_rotate_stack(data->a);
 	reverse_rotate_stack(data->b);
-	printf("rrr\n");
+	ft_putstr_fd("rrr\n", 1);
 }

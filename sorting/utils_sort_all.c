@@ -6,12 +6,11 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:45:41 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/22 20:51:04 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:38:02 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 int	get_height(t_stack *stack, t_node *current)
 {

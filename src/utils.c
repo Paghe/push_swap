@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:06:47 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/22 20:56:08 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/01 19:18:13 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_mem(char **str)
 	free(str);
 }
 
-size_t	ft_strl(char *s)
+size_t	ft_strlp(char *s)
 {
 	size_t	i;
 
@@ -58,7 +58,7 @@ size_t	ft_strl(char *s)
 	return (i);
 }
 
-char	*ft_strjoingn(char *s, char *s2)
+char	*ft_strjoinpush(char *s, char *s2)
 {
 	char	*s3;
 	int		i;
@@ -71,7 +71,7 @@ char	*ft_strjoingn(char *s, char *s2)
 		s = ft_calloc(sizeof(char), 1);
 		s[0] = '\0';
 	}
-	s3 = ft_calloc(sizeof(char), ft_strl(s) + ft_strl(s2) + 3);
+	s3 = ft_calloc(sizeof(char), ft_strlp(s) + ft_strlp(s2) + 3);
 	if (!s3)
 		return (NULL);
 	while (s[++i])

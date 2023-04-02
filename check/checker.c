@@ -1,41 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 11:19:17 by apaghera          #+#    #+#             */
-/*   Updated: 2023/04/01 18:30:46 by apaghera         ###   ########.fr       */
+/*   Created: 2023/04/01 18:23:26 by apaghera          #+#    #+#             */
+/*   Updated: 2023/04/02 19:37:39 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+int	checker_sort(t_data *data)
+{
+	size_t	count;
+	t_node	*node;
+
+	count = 1;
+	node = data->a->front;
+	while (node && node->next)
+	{
+		if (node->number < node->next->number)
+			count++;
+		node = node->next;
+	}
+	if (count == data->a->size)
+		return (1);
+	else
+		return (0);
+}
+
 int	main(int argc, char **argv)
 {
-	t_data			data;
-	int				*cost;
+	t_data	data;
+	char	*str;
 
 	if (argc == 1)
 		return (0);
-	cost = (int *)malloc(sizeof(int) * 2);
 	data = init_data(argc, argv);
 	data.a = create_stack();
 	data.b = create_stack();
 	parsing(data);
-	if (data.a->size > 4)
-		sort_three_numb(&data);
-	push_random_to_b(&data);
-	while (data.b->size != 0)
+	str = get_next_line(0);
+	while (str)
 	{
-		cost_mv_node(&data);
-		executioner(&data, cheapest_mv(&data));
+		do_command(&data, str);
+		free(str);
+		str = get_next_line(0);
 	}
-	if (data.a->size != 3)
-		babysit_index_0(&data);
+	if (checker_sort(&data) && data.b->size == 0)
+		ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("KO\n", 1);
 	destroy_stack(data.a);
 	destroy_stack(data.b);
-	free(cost);
 	return (0);
 }

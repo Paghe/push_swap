@@ -6,14 +6,13 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:01:27 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/10 12:33:47 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:37:16 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
-static void	swap_first_two(t_stack *stack)
+void	swap_first_two(t_stack *stack)
 {
 	t_node	*tmp;
 	t_node	*tmp2;
@@ -31,17 +30,18 @@ static void	swap_first_two(t_stack *stack)
 void	sa(t_data *data)
 {
 	swap_first_two(data->a);
-	printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_data *data)
 {
 	swap_first_two(data->b);
-	printf("sb\n");
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_data *data)
 {
-	sa(data);
-	sb(data);
+	swap_first_two(data->a);
+	swap_first_two(data->b);
+	ft_putstr_fd("ss\n", 1);
 }

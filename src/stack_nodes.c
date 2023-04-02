@@ -6,12 +6,11 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:58:34 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/28 16:20:01 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:39:01 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 t_node	*new_node(int number)
 {
@@ -22,7 +21,6 @@ t_node	*new_node(int number)
 		return (NULL);
 	node->number = number;
 	node->index = 0;
-	node->position = 0;
 	node->yolo_a = 0;
 	node->yolo_b = 0;
 	node->next = NULL;
@@ -68,8 +66,5 @@ void	print_stack(t_stack *stack)
 
 	node = stack->front;
 	while (node)
-	{
-		printf("stack: %i\n", node->number);
 		node = node->next;
-	}
 }

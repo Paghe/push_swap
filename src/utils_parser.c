@@ -6,12 +6,11 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:28:18 by apaghera          #+#    #+#             */
-/*   Updated: 2023/02/27 14:27:18 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:37:28 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 char	*regroup_argv(t_data data)
 {
@@ -22,7 +21,7 @@ char	*regroup_argv(t_data data)
 	i = 1;
 	while (i < data.argc)
 	{
-		regroup = ft_strjoingn(regroup, data.argv[i]);
+		regroup = ft_strjoinpush(regroup, data.argv[i]);
 		i++;
 	}
 	return (regroup);

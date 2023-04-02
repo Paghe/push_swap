@@ -6,12 +6,11 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 17:19:52 by apaghera          #+#    #+#             */
-/*   Updated: 2023/03/21 14:43:11 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:38:38 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 void	parsing(t_data data)
 {
