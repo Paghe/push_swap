@@ -23,6 +23,7 @@ SRC = src/main.c \
 		src/calc_cost.c \
 		src/utils_calc.c \
 		src/exec_move.c \
+		sorting/sort_five.c
 
 SRCB = check/checker.c \
 		src/init_data.c	\
@@ -71,5 +72,6 @@ bonus: $(OBJSB)
 fclean:
 	make clean
 	rm -f $(NAME)
-
+	rm -f $(NAME_BONUS)
+	rm -f $(LIBFT)
 re: fclean all

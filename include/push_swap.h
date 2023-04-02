@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:20:01 by apaghera          #+#    #+#             */
-/*   Updated: 2023/04/02 19:10:17 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/04/02 20:51:25 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,6 @@ void				rotate_stack(t_stack *stack);
 void				reverse_rotate_stack(t_stack *stack);
 void				do_command(t_data *data, char *str);
 void				push_to_from(t_stack *to, t_stack *from);
+int					high_idx_zero(t_node *current, int size);
+void				sort_five(t_data *data);
 #endif
